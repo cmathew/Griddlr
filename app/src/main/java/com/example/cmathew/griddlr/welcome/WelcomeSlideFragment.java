@@ -2,38 +2,38 @@ package com.example.cmathew.griddlr.welcome;
 
 
 import android.os.Bundle;
+import android.support.annotation.DrawableRes;
 import android.support.annotation.Nullable;
+import android.support.annotation.StringRes;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.example.cmathew.griddlr.R;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
+import com.example.cmathew.griddlr.databinding.FragmentWelcomeSlidePageBinding;
 
 public class WelcomeSlideFragment extends Fragment {
-    private int drawableResourceId;
-    private int captionResourceId;
-    private int headerResourceId;
+    private static final String ARG_SLIDE = "welcome_slide";
 
+    /*
     @BindView(R.id.welcome_slide_image)
     ImageView imgView;
-    @BindView(R.id.welcome_header_text)
+    @BindView(R.id.welcome_slide_header)
     TextView headerView;
-    @BindView(R.id.welcome_slide_text) TextView captionView;
+    @BindView(R.id.welcome_slide_message)
+    TextView messageView;
+    */
 
-    private Unbinder unbinder;
+    private WelcomeSlide slide;
+
+    private WelcomeSlideViewModel slideViewModel;
 
     public WelcomeSlideFragment() {
         // Required empty public constructor
     }
 
-    public static WelcomeSlideFragment newInstance(Slide slide) {
+    public static WelcomeSlideFragment newInstance(WelcomeSlide slide) {
         WelcomeSlideFragment fragment = new WelcomeSlideFragment();
 
         Bundle args = WelcomeSlideFragment.BuildArgumentBundle(slide);
@@ -42,13 +42,9 @@ public class WelcomeSlideFragment extends Fragment {
         return fragment;
     }
 
-    private static Bundle BuildArgumentBundle(Slide slide) {
+    private static Bundle BuildArgumentBundle(WelcomeSlide slide) {
         Bundle args = new Bundle();
-
-        args.putInt("drawable_resource_id", slide.getDrawableResourceId());
-        args.putInt("header_resource_id", slide.getHeaderResourceId());
-        args.putInt("caption_resource_id", slide.getCaptioneResourceId());
-
+        args.putParcelable(ARG_SLIDE, slide);
         return args;
     }
 
@@ -58,8 +54,7 @@ public class WelcomeSlideFragment extends Fragment {
 
         Bundle args = getArguments();
         if (args != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            this.slide = getArguments().getParcelable(ARG_SLIDE);
         }
     }
 
@@ -67,18 +62,23 @@ public class WelcomeSlideFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_welcome_slide_page, container, false);
 
-        unbinder = ButterKnife.bind(this, view);
+        FragmentWelcomeSlidePageBinding binding = FragmentWelcomeSlidePageBinding.bind(view);
+        this.slideViewModel = new WelcomeSlideViewModel(slide);
+        binding.setSlide(slideViewModel);
 
+        /*
+        MainActivityBinding binding = DataBindingUtil.setContentView(this, R.layout.main_activity);
+        User user = new User("Test", "User");
+        binding.setUser(user);
+        */
+
+        /*
+        unbinder = ButterKnife.bind(this, view);
         imgView.setImageResource(drawableResourceId);
         headerView.setText(headerResourceId);
-        captionView.setText(captionResourceId);
+        messageView.setText(captionResourceId);
+        */
 
         return view;
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        unbinder.unbind();
     }
 }

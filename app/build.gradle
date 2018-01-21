@@ -4,6 +4,9 @@ android {
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.example.cmathew.griddlr"
+        dataBinding {
+            enabled = true
+        }
         minSdkVersion 16
         targetSdkVersion 26
         versionCode 1

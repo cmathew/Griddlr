@@ -1,25 +1,79 @@
 package com.example.cmathew.griddlr.welcome;
 
-public class WelcomeSlide {
-    private int drawableResourceId;
-    private int captionResourceId;
-    private int headerResourceId;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.support.annotation.DrawableRes;
+import android.support.annotation.StringRes;
 
-    public WelcomeSlide(int drawableId, int headerId, int captionId) {
-        this.drawableResourceId = drawableId;
-        this.headerResourceId = headerId;
-        this.captionResourceId = captionId;
+public class WelcomeSlide implements Parcelable {
+    @DrawableRes
+    private int drawableResourceId;
+    @StringRes
+    private int captionResourceId;
+    @StringRes
+    private int headerResourceId;
+    @StringRes
+    private int titleResourceId;
+
+    public WelcomeSlide(@StringRes int titleResourceId,
+                        @StringRes int headerResId,
+                        @StringRes int messageResId,
+                        @DrawableRes int drawableResId) {
+        this.titleResourceId = titleResourceId;
+        this.headerResourceId = headerResId;
+        this.captionResourceId = messageResId;
+        this.drawableResourceId = drawableResId;
     }
 
-    public int getDrawableResourceId() {
+    @DrawableRes
+    public int getImage() {
         return drawableResourceId;
     }
 
-    public int getHeaderResourceId() {
+    @StringRes
+    public int getHeader() {
         return headerResourceId;
     }
 
-    public int getCaptioneResourceId() {
+    @StringRes
+    public int getMessage() {
         return captionResourceId;
     }
+
+    @StringRes
+    public int getTitle() {
+        return titleResourceId;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    private WelcomeSlide(Parcel in) {
+        this.titleResourceId = in.readInt();
+        this.headerResourceId = in.readInt();
+        this.captionResourceId = in.readInt();
+        this.drawableResourceId = in.readInt();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(getTitle());
+        dest.writeInt(getHeader());
+        dest.writeInt(getMessage());
+        dest.writeInt(getImage());
+    }
+
+    public static final Parcelable.Creator<WelcomeSlide> CREATOR = new Parcelable.Creator<WelcomeSlide>() {
+        @Override
+        public WelcomeSlide createFromParcel(Parcel in) {
+            return new WelcomeSlide(in);
+        }
+
+        @Override
+        public WelcomeSlide[] newArray(int size) {
+            return new WelcomeSlide[size];
+        }
+    };
 }
