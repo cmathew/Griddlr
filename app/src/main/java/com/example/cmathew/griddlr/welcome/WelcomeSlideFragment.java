@@ -16,15 +16,6 @@ import com.example.cmathew.griddlr.databinding.FragmentWelcomeSlidePageBinding;
 public class WelcomeSlideFragment extends Fragment {
     private static final String ARG_SLIDE = "welcome_slide";
 
-    /*
-    @BindView(R.id.welcome_slide_image)
-    ImageView imgView;
-    @BindView(R.id.welcome_slide_header)
-    TextView headerView;
-    @BindView(R.id.welcome_slide_message)
-    TextView messageView;
-    */
-
     private WelcomeSlide slide;
 
     private WelcomeSlideViewModel slideViewModel;
@@ -67,16 +58,12 @@ public class WelcomeSlideFragment extends Fragment {
         binding.setSlide(slideViewModel);
 
         /*
-        MainActivityBinding binding = DataBindingUtil.setContentView(this, R.layout.main_activity);
-        User user = new User("Test", "User");
-        binding.setUser(user);
-        */
-
-        /*
-        unbinder = ButterKnife.bind(this, view);
-        imgView.setImageResource(drawableResourceId);
-        headerView.setText(headerResourceId);
-        messageView.setText(captionResourceId);
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                welcomeSlideshow.setCurrentItem(welcomeSlideshow.getCurrentItem() + 1);
+            }
+        });
         */
 
         return view;

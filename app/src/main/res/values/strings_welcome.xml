@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome_slide1_title">WELCOME</string>
+    <string name="welcome_slide1_header">Welcome to Griddlr!</string>
+    <string name="welcome_slide1_message">Better breakfasts start here.</string>
+
+    <string name="welcome_slide2_title">MATCH</string>
+    <string name="welcome_slide2_header">Match with Waffles</string>
+    <string name="welcome_slide2_message">Griddlr helps you find your dream recipe.</string>
+
+    <string name="welcome_slide3_title">TRADE</string>
+    <string name="welcome_slide3_header">Join the Club</string>
+    <string name="welcome_slide3_message">Trade tips and recipes on our network.</string>
+
+    <string name="welcome_content_acknowledged">"Let's get cooking!"</string>
+</resources>

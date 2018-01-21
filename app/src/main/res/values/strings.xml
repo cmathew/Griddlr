@@ -1,16 +1,6 @@
 <resources>
     <string name="app_name">Griddlr</string>
-    <string name="title_activity_welcome">WelcomeActivity</string>
 
-    <string name="welcome_slide1_title">Welcome</string>
-    <string name="welcome_slide1_header">Welcome to Griddlr!</string>
-    <string name="welcome_slide1_message">Better breakfasts start here.</string>
-
-    <string name="welcome_slide2_title">Match</string>
-    <string name="welcome_slide2_header">Match with Waffles</string>
-    <string name="welcome_slide2_message">Griddlr helps you find your dream recipe.</string>
-
-    <string name="welcome_slide3_title">Trade</string>
-    <string name="welcome_slide3_header">Join the Club</string>
-    <string name="welcome_slide3_message">Trade tips and recipes on our network.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

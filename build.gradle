@@ -27,6 +27,7 @@ ext {
     v7SupportLibVersion = '26.1.0'
     designSupportLibVersion = '26.1.0'
     butterKnifeVersion = '8.8.1'
+    daggerVersion = '2.14.1'
 }
 
 
