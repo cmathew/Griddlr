@@ -1,0 +1,22 @@
+{
+  "id": 1,
+  "name": "Cheddar Jalapeño Waffles",
+  "author": {
+    "id": 1,
+    "name": "Chris Mathew"
+  },
+  "ingredients": [
+    {
+      "name": "Jalapeño Peppers",
+      "amount": "2 Peppers"
+    },
+    {
+      "name": "Cheddar Cheese",
+      "amount": "16 Ounces"
+    }
+  ],
+  "instructions": [
+    "Dice Jalapeño Peppers crosswise. Boil in saucepan to soften.",
+    "Cut Cheddar Cheese into 1x1 inch cubes."
+  ]
+}
