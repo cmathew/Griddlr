@@ -1,0 +1,23 @@
+{
+  "id": 4,
+  "name": "Healthy RxWaffle",
+  "author": {
+    "id": 1,
+    "name": "Chris Mathew"
+  },
+  "ingredients": [
+    {
+      "name": "Oranges",
+      "amount": "1 Fruit"
+    },
+    {
+      "name": "Fresh Ginger",
+      "amount": "1/2 Root"
+    }
+  ],
+  "instructions": [
+    "Boil ginger until completely permeated. Use a grater to create very small root fragments.",
+    "Peel orange. Cut each slice into quarters.",
+    "Mix orange and ginger into base batter."
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": 5,
+  "name": "Chewy Blueberry Waffles",
+  "author": {
+    "id": 1,
+    "name": "Chris Mathew"
+  },
+  "ingredients": [
+    {
+      "name": "Lemons",
+      "amount": "1 Fruit"
+    },
+    {
+      "name": "Blueberries",
+      "amount": "2 Cups"
+    },
+    {
+      "name": "Ricotta Cheese",
+      "amount": "2 Cups"
+    }
+  ],
+  "instructions": [
+    "Roll lemon on hard surface to loosen juices. Slice crosswise and drain into batter",
+    "Mix blueberries evenly into batter."
+  ]
+}

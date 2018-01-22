@@ -30,7 +30,7 @@ public class RestClient {
         Log.v(LOG_TAG, String.format("Making GET request with URL %s", url.toString()));
 
         try {
-            String responseBody = fileReader.read(url.getPath());
+            String responseBody = fileReader.read(url.getPath().substring(1));
             return new HttpResponse(responseBody, HttpURLConnection.HTTP_OK);
         } catch (IOException ex) {
             return new HttpResponse(null, HttpURLConnection.HTTP_NOT_FOUND);

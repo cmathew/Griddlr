@@ -1,0 +1,22 @@
+{
+  "id": 3,
+  "name": "Royal Dessert Waffles",
+  "author": {
+    "id": 1,
+    "name": "Chris Mathew"
+  },
+  "ingredients": [
+    {
+      "name": "Nutella Spread",
+      "amount": "1/2 Cup"
+    },
+    {
+      "name": "Strawberries",
+      "amount": "10 Fruits"
+    }
+  ],
+  "instructions": [
+    "Slice strawberries.",
+    "Mix into batter along with nutella."
+  ]
+}

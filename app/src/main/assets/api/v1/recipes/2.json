@@ -1,0 +1,26 @@
+{
+  "id": 2,
+  "name": "Pers-innamon Waffles",
+  "author": {
+    "id": 1,
+    "name": "Chris Mathew"
+  },
+  "ingredients": [
+    {
+      "name": "Persimmons",
+      "amount": "2 Fruits"
+    },
+    {
+      "name": "Ground Cinnamon",
+      "amount": "1 Tablespoon"
+    },
+    {
+      "name": "Vanilla Extract",
+      "amount": "2 Teaspoons"
+    }
+  ],
+  "instructions": [
+    "Slice Persimmons. Boil in saucepan to soften.",
+    "Mix into batter along with vanilla and cinnamon."
+  ]
+}

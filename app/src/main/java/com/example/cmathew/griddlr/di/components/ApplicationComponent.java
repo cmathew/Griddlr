@@ -5,6 +5,7 @@ import android.app.Application;
 import com.example.cmathew.griddlr.GriddlrApplication;
 import com.example.cmathew.griddlr.di.componentmodules.ActivityBindingModule;
 import com.example.cmathew.griddlr.di.componentmodules.FragmentBindingModule;
+import com.example.cmathew.griddlr.di.modules.RestClientModule;
 import com.example.cmathew.griddlr.di.modules.SharedPreferenceModule;
 
 import javax.inject.Singleton;
@@ -21,6 +22,7 @@ import dagger.android.support.AndroidSupportInjectionModule;
         ActivityBindingModule.class,
         FragmentBindingModule.class,
         // Provider modules
+        RestClientModule.class,
         SharedPreferenceModule.class})
 
 public interface ApplicationComponent {
