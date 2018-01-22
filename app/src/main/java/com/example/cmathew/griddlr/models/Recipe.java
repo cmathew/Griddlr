@@ -6,6 +6,8 @@ public class Recipe {
     private Chef author;
     private String yield;
 
+    private String photo_url;
+
     private String[] instructions;
     private Ingredient[] ingredients;
 
@@ -15,6 +17,10 @@ public class Recipe {
 
     public String getName() {
         return name;
+    }
+
+    public String getPhotoUrl() {
+        return photo_url;
     }
 
     public Chef getAuthor() {

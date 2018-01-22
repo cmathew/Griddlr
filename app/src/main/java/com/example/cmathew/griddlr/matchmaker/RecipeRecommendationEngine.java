@@ -15,7 +15,7 @@ public class RecipeRecommendationEngine {
 
     public long[] getRecommendations(long userId, int recommendationCount) {
         long[] recommendations = new long[recommendationCount];
-        long pivotVal = generator.nextLong();
+        long pivotVal = Math.abs(generator.nextLong());
         for (int i = 0; i < recommendationCount; i++) {
             recommendations[i] = ((pivotVal + i) % RECIPE_COUNT) + 1;
         }

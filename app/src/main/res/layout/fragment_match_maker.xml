@@ -1,28 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.cmathew.griddlr.matchmaker.MatchMakerFragment"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="@dimen/content_padding">
+    tools:context="com.example.cmathew.griddlr.welcome.WelcomeSlideFragment">
 
-    <TextView
+    <data>
+        <variable name="recipe" type="com.example.cmathew.griddlr.matchmaker.RecipeViewModel"/>
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:text="Tap the Griddle to see another match."/>
+        android:layout_height="match_parent"
+        android:padding="@dimen/content_padding">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:text="Tap the Griddle to see another match."/>
 
-        <Button
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/pressable_griddle"/>
-    </RelativeLayout>
-</LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                visibility="@{recipe.visibility}">
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:scaleType="fitCenter"
+                    android:src="@{recipe.photo}"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{recipe.name}"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/next_recipe_button"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/pressable_griddle"/>
+        </RelativeLayout>
+    </LinearLayout>
+</layout>
