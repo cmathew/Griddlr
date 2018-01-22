@@ -1,4 +1,4 @@
-package com.example.cmathew.griddlr.matchmaker;
+package com.example.cmathew.griddlr.models;
 
 public class Ingredient {
     private String name;

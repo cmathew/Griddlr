@@ -2,7 +2,7 @@ package com.example.cmathew.griddlr.remote;
 
 import android.net.Uri;
 
-import com.example.cmathew.griddlr.matchmaker.Recipe;
+import com.example.cmathew.griddlr.models.Recipe;
 import com.google.gson.Gson;
 
 public class RecipeClient {
@@ -18,6 +18,15 @@ public class RecipeClient {
         HttpResponse response = restClient.makeGetRequest(uri);
         Gson gson = new Gson();
         return gson.fromJson(response.getData(), Recipe.class);
+    }
+
+    public HttpResponse postMatch(long recipeId) {
+        Uri uri = getRecipesRoot().buildUpon()
+                .appendPath(String.valueOf(recipeId))
+                .appendPath("matches")
+                .build();
+
+        return restClient.makePostRequest(uri);
     }
 
     public Uri getRecipesRoot() {

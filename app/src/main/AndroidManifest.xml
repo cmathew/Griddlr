@@ -12,7 +12,7 @@
         android:theme="@style/Griddlr">
 
         <activity android:name=".MainActivity"
-            android:theme="@style/Griddlr">
+            android:theme="@style/Griddlr.NoActionBar">
         </activity>
 
         <activity

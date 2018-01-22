@@ -37,14 +37,14 @@ public class RestClient {
         }
     }
 
-    public HttpResponse makePostRequest(Uri url, @NonNull Object body) {
-        Log.v(LOG_TAG, String.format("Making POST request with URL %s", url.toString()));
+    public HttpResponse makePostRequest(Uri uri) {
+        Log.v(LOG_TAG, String.format("Making POST request with URL %s", uri.toString()));
 
         return new HttpResponse(null, HttpURLConnection.HTTP_NO_CONTENT);
     }
 
-    public HttpResponse makePutRequest(Uri url, @NonNull Object body) {
-        Log.v(LOG_TAG, String.format("Making PUT request with URL %s", url.toString()));
+    public HttpResponse makePutRequest(Uri uri) {
+        Log.v(LOG_TAG, String.format("Making PUT request with URL %s", uri.toString()));
 
         return new HttpResponse(null, HttpURLConnection.HTTP_NO_CONTENT);
     }
